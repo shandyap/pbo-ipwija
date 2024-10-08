@@ -18,11 +18,24 @@ class jetTempur extends Alutsista {
     }
 }
 
+class kapalTempur extends Alutsista {
+    tampilkanAlutsista(){
+        console.log("Alutsista Kapal Tempur bertipe Fregrat");
+    }
+    
+    tampilkanJumlah(jumlah){
+        console.log("Kapal tempur bertipe fregrat berjumlah ",  jumlah)
+    }
+}
+
 // Menggunakan polimorfisme
 const alutsista = new Alutsista();
 const jetTempur1 = new jetTempur();
+const kapaltempur1 = new kapalTempur();
 const tank1 = new Tank();
 
 alutsista.tampilkanAlutsista();    
 jetTempur1.tampilkanAlutsista();
 tank1.tampilkanAlutsista();
+kapaltempur1.tampilkanAlutsista();
+kapaltempur1.tampilkanJumlah(350);
