@@ -19,10 +19,12 @@ class jetTempur extends Alutsista {
 }
 
 class kapalTempur extends Alutsista {
+    //Overwrite
     tampilkanAlutsista(){
         console.log("Alutsista Kapal Tempur bertipe Fregrat");
     }
     
+    //Kompilasi
     tampilkanJumlah(jumlah){
         console.log("Kapal tempur bertipe fregrat berjumlah ",  jumlah)
     }
