@@ -1,35 +1,42 @@
-// Definisi antarmuka melalui pola objek
-const SenjataInterface = {
-    menembak: function() {
-        throw new Error("Metode 'menembak()' harus diimplementasikan.");
-    }
-};
-
-// Kelas yang mengimplementasikan antarmuka
-class PesawatTempur {
-    constructor() {
-        Object.assign(this, SenjataInterfaceInterface); // Menerapkan antarmuka ke kelas
+// Kelas abstrak tidak dapat diinstansiasi secara langsung
+class Senjata {
+    constructor(jenis) {
+        if (this.constructor === Senjata) {
+            throw new Error("Kelas Senjata adalah kelas abstrak dan tidak dapat diinstansiasi.");
+        }
+        this.jenis = jenis;
     }
 
+    // Metode abstrak
     menembak() {
-        console.log("Pesawat Tempur menembak dari udara.");
+        throw new Error("Metode 'menembak()' harus diimplementasikan.");
     }
 }
 
-// Kelas yang mengimplementasikan antarmuka
-class TankBaja {
+// Kelas turunan yang mengimplementasikan metode abstrak
+class Sniper extends Senjata {
     constructor() {
-        Object.assign(this, SenjataInterface); // Menerapkan antarmuka ke kelas
+        super('Sniper');
     }
 
     menembak() {
-        console.log("Tank Baja menembak dengan Meriam.");
+        console.log(`${this.jenis} Mampu menembak dari jarak jauh.`);
+    }
+}
+
+class AssaultRifle extends Senjata {
+    constructor() {
+        super('Assault Rifle');
+    }
+
+    menembak() {
+        console.log(`${this.jenis} Mampu menembak dari jarak menengah.`);
     }
 }
 
 // Penggunaan
-const pesawatTempur = new PesawatTempur();
-pesawatTempur.menembak(); // Output: Pesawat terbang di udara.
+const sniper = new Sniper();
+sniper.menembak(); 
 
-const tankBaja = new TankBaja();
-tankBaja.menembak(); // Output: Sepeda bergerak dengan pedal.
+const assault = new AssaultRifle();
+assault.menembak();
