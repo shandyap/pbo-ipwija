@@ -1,35 +1,35 @@
 // Definisi antarmuka melalui pola objek
-const KendaraanInterface = {
-    bergerak: function() {
-        throw new Error("Metode 'bergerak()' harus diimplementasikan.");
+const SenjataInterface = {
+    menembak: function() {
+        throw new Error("Metode 'menembak()' harus diimplementasikan.");
     }
 };
 
 // Kelas yang mengimplementasikan antarmuka
-class Pesawat {
+class PesawatTempur {
     constructor() {
-        Object.assign(this, KendaraanInterface); // Menerapkan antarmuka ke kelas
+        Object.assign(this, SenjataInterfaceInterface); // Menerapkan antarmuka ke kelas
     }
 
-    bergerak() {
-        console.log("Pesawat terbang di udara.");
+    menembak() {
+        console.log("Pesawat Tempur menembak dari udara.");
     }
 }
 
 // Kelas yang mengimplementasikan antarmuka
-class Sepeda {
+class TankBaja {
     constructor() {
-        Object.assign(this, KendaraanInterface); // Menerapkan antarmuka ke kelas
+        Object.assign(this, SenjataInterface); // Menerapkan antarmuka ke kelas
     }
 
-    bergerak() {
-        console.log("Sepeda bergerak dengan pedal.");
+    menembak() {
+        console.log("Tank Baja menembak dengan Meriam.");
     }
 }
 
 // Penggunaan
-const pesawat = new Pesawat();
-pesawat.bergerak(); // Output: Pesawat terbang di udara.
+const pesawatTempur = new PesawatTempur();
+pesawatTempur.menembak(); // Output: Pesawat terbang di udara.
 
-const sepeda = new Sepeda();
-sepeda.bergerak(); // Output: Sepeda bergerak dengan pedal.
+const tankBaja = new TankBaja();
+tankBaja.menembak(); // Output: Sepeda bergerak dengan pedal.
